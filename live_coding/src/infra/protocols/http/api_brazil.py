@@ -6,7 +6,7 @@ from src.infra.constants import URI_BRASILAPI
 
 
 class Apibrazil:
-    def get(self, url):
+    def get(self):
         try:
             return_call = requests.get(url=URI_BRASILAPI)
 
