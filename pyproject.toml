@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "live-coding"
+version = "0.1.0"
+description = ""
+authors = ["wsbengineer <wellington@up4tech.com.br>"]
+readme = "README.md"
+packages = [{include = "live_coding"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+alembic = "^1.11.1"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
