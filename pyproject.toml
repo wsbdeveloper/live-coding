@@ -2,7 +2,7 @@
 name = "live-coding"
 version = "0.1.0"
 description = ""
-authors = ["wsbengineer <wellington@up4tech.com.br>"]
+authors = ["wsbengineer <wellingtons.bezerra@hotmail.com>"]
 readme = "README.md"
 packages = [{include = "live_coding"}]
 

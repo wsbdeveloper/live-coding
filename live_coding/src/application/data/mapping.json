@@ -1,0 +1,60 @@
+{
+    "mapping": [
+      {
+        "city": "Aracaju",
+        "datasets": ["SBAR"]
+      },
+      {
+        "city": "São Paulo",
+        "datasets": ["SBBE", "SBSP", "SBGR", "SBKP"]
+      },
+      {
+        "city": "Rio de Janeiro",
+        "datasets": ["SBGL", "SBRJ"]
+      },
+      {
+        "city": "Brasília",
+        "datasets": ["SBBR"]
+      },
+      {
+        "city": "Brasília",
+        "datasets": ["SBBR"]
+      },
+      {
+        "city": "Minas Gerais",
+        "datasets": ["SBCF"]
+      },
+      {
+        "city": "Minas Gerais",
+        "datasets": ["SBSV"]
+      },
+      {
+        "city": "Bahia",
+        "datasets": ["SBSV"]
+      },
+      {
+        "city": "Pernambuco",
+        "datasets": ["SBRF"]
+      },
+      {
+        "city": "Ceará",
+        "datasets": ["SBFZ"]
+      },
+      {
+        "city": "Amazonas",
+        "datasets": ["SBEG"]
+      },
+      {
+        "city": "Rio Grande do Sul",
+        "datasets": ["SBPA"]
+      },
+      {
+        "city": "Paraná",
+        "datasets": ["SBCT"]
+      },
+      {
+        "city": "Rio Grande do Norte",
+        "datasets": ["SBSG"]
+      }
+    ]
+}
