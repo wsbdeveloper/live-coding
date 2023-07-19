@@ -1,59 +1,51 @@
 {
     "mapping": [
       {
-        "city": "Aracaju",
+        "city": "Aracaju - SE",
         "datasets": ["SBAR"]
       },
       {
-        "city": "São Paulo",
+        "city": "São Paulo - SP",
         "datasets": ["SBBE", "SBSP", "SBGR", "SBKP"]
       },
       {
-        "city": "Rio de Janeiro",
+        "city": "Rio de Janeiro - RJ",
         "datasets": ["SBGL", "SBRJ"]
       },
       {
-        "city": "Brasília",
+        "city": "Brasília - DF",
         "datasets": ["SBBR"]
       },
       {
-        "city": "Brasília",
-        "datasets": ["SBBR"]
-      },
-      {
-        "city": "Minas Gerais",
+        "city": "Confins - MG",
         "datasets": ["SBCF"]
       },
       {
-        "city": "Minas Gerais",
+        "city": "Salvador - BA",
         "datasets": ["SBSV"]
       },
       {
-        "city": "Bahia",
-        "datasets": ["SBSV"]
-      },
-      {
-        "city": "Pernambuco",
+        "city": "Recife - PE",
         "datasets": ["SBRF"]
       },
       {
-        "city": "Ceará",
+        "city": "Fortaleza - CE",
         "datasets": ["SBFZ"]
       },
       {
-        "city": "Amazonas",
+        "city": "Manaus - AM",
         "datasets": ["SBEG"]
       },
       {
-        "city": "Rio Grande do Sul",
+        "city": "Porto Alegre - RS",
         "datasets": ["SBPA"]
       },
       {
-        "city": "Paraná",
+        "city": "Curitiba - PR",
         "datasets": ["SBCT"]
       },
       {
-        "city": "Rio Grande do Norte",
+        "city": " São Gonçalo do Amarante - RN",
         "datasets": ["SBSG"]
       }
     ]

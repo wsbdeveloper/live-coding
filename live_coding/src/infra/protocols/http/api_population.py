@@ -11,7 +11,6 @@ class ApiIBGE:
         try:
             ibge_data_response = requests.get(url=URI_IBGE)
 
-            print(ibge_data_response)
             if ibge_data_response.status_code != http.HTTPStatus.OK.value:
                 return None
             

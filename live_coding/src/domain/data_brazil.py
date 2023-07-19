@@ -1,29 +1,47 @@
 class DataAPI:
-    def __init__(self, umidade, temp, atmospheric_press):
-        self.umidade = umidade
-        self.temp = temp
-        self.atmospheric_press = atmospheric_press
+    def __init__(self, umidade, temp, atmospheric_press, city, population):
+        self._umidade = umidade
+        self._temp = temp
+        self._atmospheric_press = atmospheric_press
+        self._city = city
+        self._population = population
 
     @property
     def umidade(self):
-        return self.umidade
+        return self._umidade
 
-    @property.setter
+    @umidade.setter
     def umidade(self, value):
-        self.umidade = value
+        self._umidade = value
 
     @property
     def temp(self):
-        return self.temp
+        return self._temp
 
-    @property.setter
+    @temp.setter
     def temp(self, value):
-        self.temp = value
+        self._temp = value
 
     @property
     def atmospheric_press(self):
-        return self.atmospheric_press
+        return self._atmospheric_press
 
-    @property.setter
+    @atmospheric_press.setter
     def atmospheric_press(self, value):
-        self.temp = value
+        self._atmospheric_press = value
+    
+    @property
+    def city(self):
+        return self._city
+    
+    @city.setter
+    def city(self, value):
+        self._city = value
+
+    @property
+    def population(self):
+        return self._population
+    
+    @population.setter
+    def population(self, value):
+        self._population = value
