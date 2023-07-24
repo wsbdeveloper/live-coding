@@ -10,6 +10,10 @@ packages = [{include = "live_coding"}]
 python = "^3.8"
 alembic = "^1.11.1"
 requests = "^2.31.0"
+flask = "^2.3.2"
+gunicorn = "^21.2.0"
+python-dotenv = "^1.0.0"
+psycopg2-binary = "^2.9.6"
 
 
 [build-system]

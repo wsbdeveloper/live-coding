@@ -16,37 +16,30 @@ class PopulationClimateImp(PopulationClimate):
         self.api_climate = []
         self.list_domain_climate = []
 
-    def consulting_climate(self, climate):
+    def consulting_climate(self, climate) -> List[DataAPI]:
         self.api_climate = Apibrazil().get()
         self.population = ApiIBGE().get()
         get_city_data = self.read_json_city()
 
         # list domain data
-        lista_data: List[DataAPI] = []
+        list_data = []
        
         get_filter_climate = self.filter_climate(data_api_climate=self.api_climate, climate=climate) 
         
         for filter_data in get_filter_climate:
             # consulting citys with climate ps -  (Predomínio de Sol)
             city_consult = self.find_datasets(data_arr=get_city_data, str_query=filter_data["codigo_icao"])
-            data_population = self.filter_population(data_api_ibge=self.population, city_filter=city_consult[0])
-            lista_data.append(DataAPI(atmospheric_press=filter_data["pressao_atmosferica"], temp=filter_data["temp"], umidade=filter_data["umidade"], city=city_consult[0], population=data_population[0]["serie"]["2007"]))
-
-        return lista_data
+            
+            if not city_consult == None:
+                data_population = self.filter_locale(data_api=self.population, city=city_consult)
+                list_data.append(DataAPI(atmospheric_press=filter_data["pressao_atmosferica"], temp=filter_data["temp"], umidade=filter_data["umidade"], city=city_consult, population=data_population[0]["serie"]["2007"]))
+        return list_data
 
 
     def filter_climate(self, data_api_climate, climate):
         dados_filtrados = [dado for dado in data_api_climate if dado["condicao"] == climate]
         return dados_filtrados
     
-    def filter_population(self, data_api_ibge, city_filter):
-        # filter population ID
-        obj_filter_city = self.filter_locale(data_api=data_api_ibge, city=city_filter)
-        
-        if obj_filter_city == []:
-            # todo: refactor raise / logger
-            return "Not city found in API" 
-        return obj_filter_city
 
     def read_json_city(self):
         with open('live_coding/src/application/data/mapping.json', 'r') as arq_json:
@@ -55,13 +48,15 @@ class PopulationClimateImp(PopulationClimate):
             return data
     
     def find_datasets(self, data_arr, str_query):
+        city_found = ""
         for item in data_arr['mapping']:
             datasets = item.get('datasets', [])
             if str_query in datasets:
                 city = item.get("city")
-                if city not in self.citys:
-                    self.citys.append(city)
-        return self.citys
+                
+                return city
+            
+        return None
     
     def find_by_id_ibge_response(self, arr_ibge, id):
         for item in arr_ibge:
@@ -75,6 +70,6 @@ class PopulationClimateImp(PopulationClimate):
 
         for serie in series:
             localidade = serie["localidade"]
-            if localidade["nome"].lower() == city.lower():
+            if localidade["nome"].lower()  == city.lower():
                 obj_filter.append(serie)
         return obj_filter

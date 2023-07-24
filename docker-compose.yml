@@ -1,0 +1,16 @@
+version: "3.2"
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5455:5432"
+    volumes:
+      - "live-coding-db:/var/lib/postgres/data"
+      - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
+volumes:
+  live-coding-db:
