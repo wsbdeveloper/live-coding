@@ -1,1 +1,1 @@
-# Live coding STONE
+# Live coding
