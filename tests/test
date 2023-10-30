@@ -1,0 +1,32 @@
+import os
+import django
+from django.conf import settings
+from django.core.wsgi import get_wsgi_application
+
+# Configurações do ambiente
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_project.settings')
+django.setup()
+
+# Carregar as configurações do Django Rest Framework
+from rest_framework import serializers
+from rest_framework import viewsets
+from rest_framework import routers
+
+# Carregar os modelos e serializers da sua aplicação
+from myapp.models import MyModel
+from myapp.serializers import MyModelSerializer
+
+# Definir as views e routers do Django Rest Framework
+class MyModelViewSet(viewsets.ModelViewSet):
+    queryset = MyModel.objects.all()
+    serializer_class = MyModelSerializer
+
+router = routers.DefaultRouter()
+router.register(r'mymodels', MyModelViewSet)
+
+# Iniciar a aplicação WSGI
+application = get_wsgi_application()
+
+if __name__ == "__main__":
+    # Se precisar realizar alguma tarefa adicional ao executar o script
+    print("Script main em execução.")
